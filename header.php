@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +16,7 @@ session_start();
     <link rel="stylesheet" href="./css/post.css">
     <link rel="stylesheet" href="./css/profile.css">
     <link rel="stylesheet" href="./css/add_post.css">
+    <link rel="stylesheet" href="./css/profile.css">
 </head>
 <body>
 <div class="d-flex">

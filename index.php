@@ -1,3 +1,12 @@
+<?php
+session_start();
+	include_once('config.php');
+	if(empty($_SESSION['email']))
+	{
+		header('Location: login.php');
+	}
+?>
+
 <div class="d-flex">
     <?php include('./header.php'); ?>
     <main class="main-content">

@@ -1,3 +1,7 @@
+<?php
+  require("./backend_fetch_posts.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,28 +90,34 @@
                         </div>
                         <!-- Posts Section -->
                         <div class="col-12">
-                            <div class="row">
-                                <!-- Post Cards (6 example posts) -->
-                                <?php
-                                for ($i = 1; $i <= 6; $i++) {
-                                    echo '
-                                    <div class="col-md-4 mb-4">
-                                        <div class="card post-card">
-                                            <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Post Image">
-                                            <div class="card-body">
-                                                <p class="card-text">This is an example post description for post ' . $i . '.</p>
-                                                <!-- Like and Comment Icons -->
-                                                <div class="card-hover">
-                                                    <i class="fas fa-thumbs-up"></i>
-                                                    <i class="fas fa-comment"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>';
-                                }
-                                ?>
-                            </div>
-                        </div>
+                          <div class="row">
+                              <!-- Post Cards -->
+                              <?php
+                              if (isset($posts) && count($posts) > 0) {
+                                  foreach ($posts as $post) {
+                                      echo '
+                                      <div class="col-md-4 mb-4">
+                                          <div class="card post-card">
+                                              <!-- Display the post image -->
+                                              <img src="./uploads/' . htmlspecialchars($post['post_pic']) . '" class="card-img-top" alt="Post Image">
+                                              <div class="card-body">
+                                                  <!-- Display the post description -->
+                                                  <p class="card-text">' . htmlspecialchars($post['content']) . '</p>
+                                                  <!-- Like and Comment Icons -->
+                                                  <div class="card-hover">
+                                                      <i class="fas fa-thumbs-up"></i>
+                                                      <i class="fas fa-comment"></i>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>';
+                                  }
+                              } else {
+                                  echo '<p>No posts available.</p>';
+                              }
+                              ?>
+                          </div>
+                      </div>
                     </div>
                 </div>
             </div>

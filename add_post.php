@@ -4,7 +4,7 @@
 ?>
 <div class="container mt-5 post">
     <h1>Add New Post</h1>
-    <form>
+    <form action="./backend_add_post.php" method="POST" enctype="multipart/form-data">
         <!-- Image Upload -->
         <div class="mb-4">
             <label for="postImage" class="form-label">Upload Image</label>

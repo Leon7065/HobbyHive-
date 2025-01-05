@@ -19,8 +19,8 @@ if (isset($_POST['login'])) {
         $data = $stmt->fetch();
         if (password_verify($password, $data['password'])) {
             $_SESSION['email'] = $data['email'];
-            echo "SUCCESS";
-            /*header("Location: user.php");*/
+            $_SESSION['user_id'] = $data['user_id'];
+            header("Location: index.php");
             exit();
         } else {
             $_SESSION['error'] = "Password incorrect";
