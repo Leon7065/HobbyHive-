@@ -1,39 +1,39 @@
-<?php include_once("./header.php") ?>
+<?php
+  ini_set('display_errors', 1);
+  error_reporting(E_ALL);
+  require("./backend/fetch_hobbies.php");
+?>
 <div class="container mt-5 post">
     <h1>Add New Post</h1>
     <form>
         <!-- Image Upload -->
         <div class="mb-4">
             <label for="postImage" class="form-label">Upload Image</label>
-            <input class="form-control" type="file" id="postImage" accept="image/*">
+            <input class="form-control" name="image" type="file" id="postImage" accept="image/*">
         </div>
         <!-- Description -->
         <div class="mb-4">
             <label for="postDescription" class="form-label">Description</label>
-            <textarea class="form-control" id="postDescription" rows="3" placeholder="Write something about your post..."></textarea>
+            <textarea class="form-control" name="description" id="postDescription" rows="3" placeholder="Write something about your post..."></textarea>
         </div>
         <!-- Dropdown for Hobbies -->
         <div class="mb-4">
             <label for="hobbiesDropdown" class="form-label">Select Hobbies</label>
-            <select id="hobbiesDropdown" class="form-select">
-                <option value="" disabled selected>Select a hobby</option>
-                <option value="Photography">Photography</option>
-                <option value="Cooking">Cooking</option>
-                <option value="Traveling">Traveling</option>
-                <option value="Drawing">Drawing</option>
-                <option value="Gaming">Gaming</option>
-                <option value="Gardening">Gardening</option>
+            <select id="hobbiesDropdown" class="form-select" name="hobbies[]">
+                <?php foreach ($hobbies as $hobby): ?>
+                    <option value="<?php echo htmlspecialchars($hobby['hobby_id']); ?>">
+                        <?php echo htmlspecialchars($hobby['hobby_name']); ?>
+                    </option>
+                <?php endforeach; ?>
             </select>
         </div>
         <!-- Badges Container -->
         <div class="mb-4">
             <label class="form-label">Selected Hobbies</label>
-            <div id="selectedHobbies" class="d-flex flex-wrap">
-                <!-- Hobbies badges will appear here -->
-            </div>
+            <div id="selectedHobbies" class="d-flex flex-wrap"></div>
         </div>
         <!-- Submit Button -->
-        <button type="submit" class="btn btn-primary w-100">Submit Post</button>
+        <button type="submit" name="hobbies" class="btn btn-primary w-100">Submit Post</button>
     </form>
 </div>
 <script>
