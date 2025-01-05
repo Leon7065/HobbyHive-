@@ -42,7 +42,7 @@ session_start();
                 <span class="hide-on-collapse">New Post</span>
             </a>
             <br>    
-            <a href="./backend/logout.php" class="sidebar-link text-decoration-none p-3">
+            <a href="./backend_logout.php" class="sidebar-link text-decoration-none p-3">
                 <i class="fa-solid fa-arrow-right-from-bracket me-3"></i>
                 <span class="hide-on-collapse">Log Out</span>
             </a>

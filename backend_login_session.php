@@ -1,5 +1,5 @@
 <?php
-require('../database/config.php');
+require('./database/config.php');
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 session_start();
@@ -8,7 +8,7 @@ if (isset($_POST['login'])) {
     $password = $_POST['password'];
     if (empty($email) || empty($password)) {
         $_SESSION['error'] = "Fill all the fields!";
-        header("Location: ../login.php");
+        header("Location: ./login.php");
         exit();
     }
     $sql = "SELECT * FROM users WHERE email=:email";
@@ -24,13 +24,13 @@ if (isset($_POST['login'])) {
             exit();
         } else {
             $_SESSION['error'] = "Password incorrect";
-            header("Location: ../login.php");
+            header("Location: ./login.php");
             exit();
         }
     } else {
         session_destroy();
         $_SESSION['error'] = "User not found!!";
-        header("Location: ../login.php");
+        header("Location: ./login.php");
         exit();
     }
 }

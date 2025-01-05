@@ -8,7 +8,7 @@
 <body>
   <div class="container">
     <div class="content">
-      <form action="./backend/register_user.php" method="POST">
+      <form action="./backend_register_user.php" method="POST">
       <div class="title">
         <h2>Sign Up</h2>
         <div id="logo"></div>

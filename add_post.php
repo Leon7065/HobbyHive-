@@ -1,7 +1,6 @@
 <?php
-  ini_set('display_errors', 1);
-  error_reporting(E_ALL);
-  require("./backend/fetch_hobbies.php");
+  require("./backend_fetch_hobbies.php");
+  include_once("./header.php");
 ?>
 <div class="container mt-5 post">
     <h1>Add New Post</h1>
