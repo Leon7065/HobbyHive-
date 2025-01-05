@@ -1,0 +1,137 @@
+:root {
+    --sidebar-width: 280px;
+    --sidebar-width-collapsed: 80px;
+    --dark-yellow: #b58f1a; /* Very dark yellow */
+    --yellow-primary: #937600; /* Softer Yellow */
+    --hive-pattern: url('../images/hive-bg.jpg'); /* Bee Hive pattern */
+    --background-color: #f6f6f6; /* Light grey for the main content area */
+    --text-color: #333; /* Dark text for contrast */
+}
+body {
+    overflow-x: hidden;
+    font-family: 'Arial', sans-serif;
+}
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+    background-image: 
+        linear-gradient(rgba(183, 143, 26, 0.8), rgba(183, 143, 26, 0.8)), /* Dark yellow overlay with opacity */
+        url(../images/bg.jpg); /* Bee Hive background image */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding-top: 40px;
+    transition: all 0.3s ease;
+}
+.sidebar.collapsed {
+    width: var(--sidebar-width-collapsed);
+}
+.sidebar .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.sidebar .logo-container img {
+    max-width: 100px;
+}
+.sidebar-link {
+    color: white;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    margin: 4px 16px;
+    padding: 12px;
+    white-space: nowrap;
+}
+.sidebar-link:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateX(10px);
+    cursor: pointer;
+}
+.sidebar-link.active {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: var(--yellow-primary);
+}
+.sidebar .profile-section {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 20px;
+}
+.profile-section a {
+    color: #a0a3bd; /* Light text color */
+    transition: all 0.2s ease;
+    border-radius: 8px;
+    margin: 4px 16px;
+    display: block;
+}
+.profile-section a:hover {
+    color: #ffffff; /* Hover color */
+    background: rgba(255, 255, 255, 0.1); /* Background on hover */
+    transform: translateX(5px); /* Small animation for hover effect */
+}
+.profile-info h6 {
+    margin-bottom: 0;
+    font-weight: 600;
+}
+.profile-info span {
+    font-size: 0.9rem;
+}
+.main-content {
+    margin-left: var(--sidebar-width);
+    background-color: var(--background-color);
+    min-height: 100vh;
+    padding: 20px;
+    transition: all 0.3s ease;
+    color: var(--text-color);
+}
+.collapsed ~ .main-content {
+    margin-left: var(--sidebar-width-collapsed);
+}
+.toggle-btn {
+    position: absolute;
+    right: -15px;
+    top: 20px;
+    background: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.collapsed .toggle-btn {
+    transform: rotate(180deg);
+}
+.collapsed .hide-on-collapse {
+    opacity: 0;
+    visibility: hidden;
+}
+.collapsed .logo-text,
+.collapsed .profile-info {
+    opacity: 0;
+}
+.collapsed .sidebar-link {
+    text-align: center;
+    padding: 1rem !important;
+    margin: 4px 8px;
+}
+.collapsed .sidebar-link i {
+    margin: 0 !important;
+}
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 60px;
+    }
+    .main-content {
+        margin-left: 60px;
+    }
+    .collapsed .sidebar-link {
+        padding: 10px !important;
+        text-align: center;
+    }
+    .collapsed .sidebar-link i {
+        margin: 0;
+    }
+}
