@@ -48,7 +48,7 @@ session_start();
             </a>
         </div>
         <div class="profile-section mt-auto p-4">
-        <a href="#" class="sidebar-link text-decoration-none">
+        <a href="./profile.php" class="sidebar-link text-decoration-none">
                 <div class="d-flex align-items-center">
                     <img src="https://randomuser.me/api/portraits/women/70.jpg" style="height:60px" class="rounded-circle" alt="Profile">
                     <div class="ms-3 profile-info">
