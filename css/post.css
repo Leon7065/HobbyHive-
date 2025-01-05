@@ -1,28 +1,120 @@
+.hobby-hive-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Lora', serif;
+    font-size: 1.5rem;
+    color: #1e2a47;
+    position: relative;
+    text-align: center;
+    margin-top: -50px;
+}
+.hexagon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 50px;
+}
+.hexagon-container .logo {
+    width: 20px;
+    height: 20px;
+    background-image: url('../images/explorer-removebg-preview.png');
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    z-index: 1;
+}
+.hobby-hive-title .hobby-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #f1c40f;
+    position: relative;
+    z-index: 2;
+    padding: 0.5rem 2rem;
+    background-color: #f39c12;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+.hobby-hive-title::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    background-image: url('../images/explorer-removebg-preview.png');
+    background-size: contain;
+    background-color: #f1c40f;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+.card {
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+.profile-img-list .profile-img-list-item img {
+    transition: transform 0.3s ease;
+}
+.profile-img-list .profile-img-list-item img:hover {
+    transform: scale(1.1);
+}
+.like-btn:hover {
+    color: #e63946;
+    transform: scale(1.1);
+}
+.bg-light {
+    background: linear-gradient(135deg, rgba(45, 158, 155, 0.1), rgba(255, 255, 255, 0.9));
+}
+.card-body {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.like-btn, .comment-btn {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.like-btn:hover, .comment-btn:hover {
+    background-color: #e63946;
+}
+
 .profile .profile-img-list {
     list-style-type: none;
     margin: -0.1rem;
     padding: 0;
 }
 .profile .profile-img-list .profile-img-list-item.main {
-    width: 50%;
+    width: 100%;
 }
+
 .profile .profile-img-list:after, .profile .profile-img-list:before {
     content: "";
     display: table;
     clear: both;
 }
+
 .profile .profile-img-list .profile-img-list-item {
-    width: 25%;
+    width: 33.33%;
     padding: 0.1rem;
     float: left;
 }
+
 .profile .profile-img-list .profile-img-list-item .profile-img-list-link {
     display: block;
     padding-top: 75%;
     overflow: hidden;
     position: relative;
 }
-.profile .profile-img-list .profile-img-list-item .profile-img-list-link .profile-img-content, .profile .profile-img-list .profile-img-list-item .profile-img-list-link img {
+.profile .profile-img-list .profile-img-list-item .profile-img-list-link .profile-img-content, 
+.profile .profile-img-list .profile-img-list-item .profile-img-list-link img {
     position: absolute;
     top: 0;
     left: 0;
@@ -33,7 +125,8 @@
     background-position: center;
     background-repeat: no-repeat;
 }
-.profile .profile-img-list .profile-img-list-item .profile-img-list-link .profile-img-content:before, .profile .profile-img-list .profile-img-list-item .profile-img-list-link img:before {
+.profile .profile-img-list .profile-img-list-item .profile-img-list-link .profile-img-content:before, 
+.profile .profile-img-list .profile-img-list-item .profile-img-list-link img:before {
     content: "";
     position: absolute;
     top: 0;
@@ -42,16 +135,7 @@
     bottom: 0;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
-.profile .profile-img-list .profile-img-list-item {
-    width: 25%;
-    padding: 0.1rem;
-    float: left;
-}
-.profile .profile-img-list:after, .profile .profile-img-list:before {
-    content: "";
-    display: table;
-    clear: both;
-}
+
 .profile .profile-img-list .profile-img-list-item.with-number .profile-img-number {
     position: absolute;
     top: 50%;
@@ -64,4 +148,11 @@
     margin-top: -0.765625rem;
     text-align: center;
     text-shadow: 2px 2px #fff;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
 }
