@@ -7,7 +7,7 @@
 </head>
 <body>
   <div class="wrapper">
-    <form action="./login_session.php" method="POST">
+    <form action="./backend/login_session.php" method="POST">
       <div class="title">
         <h2>Login</h2>
         <div id="logo"></div>
