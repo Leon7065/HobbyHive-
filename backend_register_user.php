@@ -1,5 +1,5 @@
 <?php
-  require('./database_config.php');
+  require('./database/config.php');
   error_reporting(E_ALL);
   ini_set('display_errors', 1);
   if(isset($_POST['register'])){
@@ -35,7 +35,7 @@
       exit();
     }
     $sql = "INSERT INTO users(fullname, username, email, password, gender, phonenumber, role) values (:fullname, :username, :email, :password, :gender, :phonenumber, :role)";
-    $connect->exec("USE hobbyhive");
+    $connect->exec("USE hobbyhive");//
     $sqlQuery = $connect->prepare($sql);
     $sqlQuery->bindParam(':fullname', $fullname);
     $sqlQuery->bindParam(':username', $username);
@@ -45,11 +45,11 @@
     $sqlQuery->bindParam(':phonenumber', $phonenumber);
     $sqlQuery->bindParam(':role', $role);
     if ($sqlQuery->execute()) {
-        header("Location: ../login.php");
+        header("Location: ./login.php");
         exit();
     } else {
         echo "Registration failed!";
-        header("Location: ../signup.php");
+        header("Location: ./signup.php");
         exit();
     }
   }
