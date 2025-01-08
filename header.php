@@ -56,7 +56,7 @@
         <a href="./profile.php" class="sidebar-link text-decoration-none">
                 <div class="d-flex align-items-center">
                     <?php 
-                        $profilePic = !empty($user['profile_pic']) ? htmlspecialchars($user['profile_pic']) : './images/profile.jpg';
+                        $profilePic = !empty($user['profile_pic']) ? htmlspecialchars($user['profile_pic']) : './uploads/profile.jpg';
                     ?>
                     <img src="<?php echo $profilePic; ?>" style="height:60px" class="rounded-circle" alt="Profile">
                     <div class="ms-3 profile-info">

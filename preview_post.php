@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php require('./backend_fetch_post.php')  ?>
+<?php require('./backend_fetch_post_id.php')  ?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -100,15 +100,16 @@
     <div class="content-wrapper">
         <div class="post-section">
             <div class="post-image">
-                <img src="images/winterfell.jpg" alt="Post Image">
+            <img src='uploads/<?= htmlspecialchars($post['post_pic']) ?>'
+                  style='width: 100px; height: auto;' alt='Post Picture'/>
             </div>
             <p class="post-description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas eum animi ratione nisi nihil eaque similique...
+                <?php echo $post['content'] ?>            
             </p>
             <div class="post-header">
                 <div class="d-flex align-items-center">
-                    <img src="images/Jon_Snow.png" alt="Profile Picture">
-                    <strong class="ms-2">username</strong>
+                <img src="uploads/<?= $post['profile_pic'] ?>">
+                <strong class="ms-2"><?php echo $post['username'] ?></strong>
                 </div>
                 <i class="fa-solid fa-ellipsis"></i>
             </div>
