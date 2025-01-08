@@ -1,6 +1,6 @@
 <?php
     session_start();
-	include_once('config.php');
+	include_once('database/config.php');
 	if(empty($_SESSION['email']))
 	{
 		header('Location: login.php');

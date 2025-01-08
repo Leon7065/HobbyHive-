@@ -1,6 +1,6 @@
 <?php
 session_start();
-	include_once('config.php');
+	include_once('database/config.php');
 	if(empty($_SESSION['email']))
 	{
 		header('Location: login.php');
@@ -28,7 +28,8 @@ session_start();
                                             <a href="./preview_post.php?post_id=<? $post['post_id'] ?>" class="text-decoration-none text-dark">
                                                 <div class="card-body">
                                                     <div class="d-flex align-items-center mb-3">
-                                                        <a href="#"><img src="uploads/<?= $post['user_profile_pic'] ?>" alt="" width="50" class="rounded-circle" /></a>
+                                                    <a href="#" class="profile-img-list-link" 
+                                                    onclick="openPostModal(<?= $post['post_id'] ?>)">
                                                         <div class="flex-fill ps-2">
                                                             <div class="fw-bold"><a href="#" class="text-decoration-none"><?= $post['user_name'] ?></a></div>
                                                             <div class="small text-body text-opacity-50"><?= $post['created_at'] ?></div>
@@ -81,4 +82,5 @@ session_start();
         likeBtn.classList.toggle('liked');
     }
     </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </div>

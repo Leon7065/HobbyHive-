@@ -6,7 +6,7 @@
   try {
       $post_id = $_GET['post_id'] ?? null;
       if ($post_id) {
-        $sql = "SELECT posts.*, users.fullname AS username, users.profile_pic AS profile_pic
+        $sql = "SELECT posts.*, users.username, users.profile_pic AS profile_pic
                 FROM posts
                 INNER JOIN users ON posts.user_id = users.user_id
                 WHERE posts.post_id = :post_id";
