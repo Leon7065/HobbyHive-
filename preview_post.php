@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php require('./backend_fetch_post_id.php')?>
 <?php require('./backend_fetch_post_id.php'); ?>
-<?php require('./database/config.php')?>
+<?php require('./database_config.php')?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
