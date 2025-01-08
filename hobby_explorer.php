@@ -25,13 +25,13 @@ session_start();
                                 <?php foreach ($posts as $post) { ?>
                                     <div class="col-lg-4 col-md-6 col-sm-12">
                                         <div class="card mb-3 shadow-sm">
-                                            <a href="./preview_post.php?post_id=<? $post['post_id'] ?>" class="text-decoration-none text-dark">
+                                            <a href="" class="text-decoration-none text-dark">
                                                 <div class="card-body">
                                                     <div class="d-flex align-items-center mb-3">
                                                     <a href="#" class="profile-img-list-link" 
                                                     onclick="openPostModal(<?= $post['post_id'] ?>)">
                                                         <div class="flex-fill ps-2">
-                                                            <div class="fw-bold"><a href="#" class="text-decoration-none"><?= $post['user_name'] ?></a></div>
+                                                            <div class="fw-bold"><a href="./profile.php?user_id=<?= $post['user_id'] ?>" class="text-decoration-none"><?= $post['user_name'] ?></a></div>
                                                             <div class="small text-body text-opacity-50"><?= $post['created_at'] ?></div>
                                                         </div>
                                                     </div>

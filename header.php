@@ -53,7 +53,7 @@
             </a>
         </div>
         <div class="profile-section mt-auto p-4">
-        <a href="./profile.php" class="sidebar-link text-decoration-none">
+        <a href="./profile.php?user_id=<?= $user['user_id'] ?>" class="sidebar-link text-decoration-none">
                 <div class="d-flex align-items-center">
                     <?php 
                         $profilePic = !empty($user['profile_pic']) ? htmlspecialchars($user['profile_pic']) : './uploads/profile.jpg';

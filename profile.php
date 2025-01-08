@@ -1,5 +1,5 @@
 <?php
-  require("./backend_fetch_user_posts.php");
+  require("./backend_profile.php");
   ini_set('display_errors', 1);
   error_reporting(E_ALL);
 ?>
@@ -31,10 +31,24 @@
                                     <div class="col-md-8">
                                         <div class="card-body profile-body">
                                             <div class="d-flex justify-content-between align-items-center">
-                                                <h5 class="card-title">John Doe</h5>
+                                                <h5 class="card-title"><?php echo $profile_user['fullname']?></h5>
+                                                <?php if ($profile_user['user_id'] == $_SESSION['user_id']): ?>
                                                 <button onclick="window.location.href='./edit_profile.php';" class="btn btn-sm btn-outline-primary">
                                                     <i class="fas fa-edit"></i> Edit
                                                 </button>
+                                                <?php endif; ?>
+                                                <?php
+                                                if ($profile_user['user_id'] != $_SESSION['user_id']): ?>
+                                                    <?php if (in_array($profile_user['user_id'], $followed_ids)): ?>
+                                                        <button class="btn btn-sm btn-outline-secondary" disabled>
+                                                            <i class="fas fa-user-check"></i> Following
+                                                        </button>
+                                                    <?php else:  ?>
+                                                        <button onclick="window.location.href='./backend_follow.php?follow_user=<?php echo $profile_user['user_id']; ?>';" class="btn btn-sm btn-outline-primary">
+                                                            <i class="fas fa-user-plus"></i> Follow 
+                                                        </button>
+                                                    <?php endif; ?>
+                                                <?php endif; ?>
                                             </div>
                                             <p class="card-text">
                                                 bio here
