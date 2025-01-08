@@ -32,7 +32,7 @@
                 <i class="fas fa-home me-3"></i>
                 <span class="hide-on-collapse">Home</span>
             </a>
-            <a href="./index.php" class="sidebar-link text-decoration-none p-3">
+            <a href="./hobby_explorer.php" class="sidebar-link text-decoration-none p-3">
                 <i class="fa-solid fa-magnifying-glass me-3"></i>
                 <span class="hide-on-collapse">H-Explorer</span>
             </a>

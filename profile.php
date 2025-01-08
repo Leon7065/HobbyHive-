@@ -1,5 +1,7 @@
 <?php
-  require("./backend_fetch_posts.php");
+  require("./backend_fetch_user_posts.php");
+  ini_set('display_errors', 1);
+  error_reporting(E_ALL);
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +21,7 @@
             <div class="bg-light">
                 <div class="container py-5">
                     <div class="row justify-content-center">
-                        <!-- Profile Section -->
+                        
                         <div class="col-12 mb-4 text-center">
                             <div class="card shadow-sm profile-card">
                                 <div class="row g-0">
@@ -62,7 +64,7 @@
                                 </div>
                                 <div class="card-footer profile-footer">
                                     <div class="d-flex justify-content-around">
-                                        <!-- Hobbies Section -->
+
                                         <div class="profile-hobbies">
                                             <h5>Hobbies</h5>
                                             <div class="hobby-grid">
@@ -88,22 +90,22 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Posts Section -->
+                     
                         <div class="col-12">
                           <div class="row">
-                              <!-- Post Cards -->
+                          
                               <?php
                               if (isset($posts) && count($posts) > 0) {
                                   foreach ($posts as $post) {
                                       echo '
                                       <div class="col-md-4 mb-4">
                                           <div class="card post-card">
-                                              <!-- Display the post image -->
+                                          
                                               <img src="./uploads/' . htmlspecialchars($post['post_pic']) . '" class="card-img-top" alt="Post Image">
                                               <div class="card-body">
-                                                  <!-- Display the post description -->
+                                              
                                                   <p class="card-text">' . htmlspecialchars($post['content']) . '</p>
-                                                  <!-- Like and Comment Icons -->
+                                                
                                                   <div class="card-hover">
                                                       <i class="fas fa-thumbs-up"></i>
                                                       <i class="fas fa-comment"></i>

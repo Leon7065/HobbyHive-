@@ -1,7 +1,5 @@
 <?php
-    if (session_status() === PHP_SESSION_NONE) {
-        session_start();
-    }
+    session_start();
 	include_once('config.php');
 	if(empty($_SESSION['email']))
 	{
@@ -36,6 +34,7 @@
                                 foreach ($posts as $post) { ?>
                                     <div class="col-lg-4 col-md-6 col-sm-12">
                                         <div class="card mb-3 shadow-sm">
+                                        <a href="./preview_post.php?post_id=<? $post['post_id'] ?>" class="text-decoration-none text-dark">
                                             <div class="card-body">
                                                 <div class="d-flex align-items-center mb-3">
                                                     <a href="#"><img src="<?= $post['image'] ?>" alt="" width="50" class="rounded-circle" /></a>
@@ -50,11 +49,11 @@
                                                         <a href="#" data-lity="" class="profile-img-list-link">
                                                             <span class="profile-img-content" 
                                                                   style="background-image: url('<?= $post['post_image'] ?>');
-                                                                         display: block; 
-                                                                         width: 100%; 
-                                                                         height: 200px; 
-                                                                         background-size: cover; 
-                                                                         background-position: center;">
+                                                                        display: block; 
+                                                                        width: 100%; 
+                                                                        height: 200px; 
+                                                                        background-size: cover; 
+                                                                        background-position: center;">
                                                             </span>
                                                         </a>
                                                     </div>
@@ -73,6 +72,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            </a>
                                         </div>
                                     </div>
                                 <?php } ?>
