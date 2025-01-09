@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="./css/signup.css">
 </head>
 <body>
+
   <div class="container">
     <div class="content">
       <form action="./backend_register_user.php" method="POST">

@@ -1,6 +1,7 @@
 <?php
 session_start();
 	include_once('database_config.php');
+
 	if(empty($_SESSION['email']))
 	{
 		header('Location: login.php');
@@ -25,7 +26,7 @@ session_start();
                                 <?php foreach ($posts as $post) { ?>
                                     <div class="col-lg-4 col-md-6 col-sm-12">
                                         <div class="card mb-3 shadow-sm">
-                                            <a href="" class="text-decoration-none text-dark">
+                                              <a href="" class="text-decoration-none text-dark">
                                                 <div class="card-body">
                                                     <div class="d-flex align-items-center mb-3">
                                                     <a href="#" class="profile-img-list-link" 
@@ -53,13 +54,13 @@ session_start();
                                                     <hr class="mb-1 opacity-1" />
                                                     <div class="row text-center fw-bold">
                                                         <div class="col-6">
-                                                        <?php
+                                                            <?php
                                                                 $stmt = $connect->prepare("SELECT * FROM likes WHERE user_id = ? AND post_id = ?");
                                                                 $stmt->execute([$_SESSION['user_id'], $post['post_id']]);
                                                                 $isLiked = $stmt->rowCount() > 0;
                                                             ?>
                                                             <a href="backend_add_like.php?post_id=<?= $post['post_id'] ?>&user_id=<?= $_SESSION['user_id'] ?>" class="text-body text-opacity-50 text-decoration-none d-block p-2">
-                                                                <i class="fas fa-heart me-1 <?= $isLiked ? 'text-danger' : 'text-muted' ?>"></i> <?= $isLiked ? 'Liked' : 'Like' ?>  
+                                                                <i class="fas fa-heart me-1 <?= $isLiked ? 'text-danger' : 'text-muted' ?>"></i> <?= $isLiked ? 'Liked' : 'Like' ?>
                                                             </a>
                                                         </div>
                                                         <div class="col-6">
@@ -86,6 +87,8 @@ session_start();
         const likeBtn = event.target.closest('.like-btn');
         likeBtn.classList.toggle('liked');
     }
+
     </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </div>
