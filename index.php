@@ -53,8 +53,13 @@
                                                 <hr class="mb-1 opacity-1" />
                                                 <div class="row text-center fw-bold">
                                                     <div class="col-6">
-                                                        <a href="#" class="text-body text-opacity-50 text-decoration-none d-block p-2 like-btn">
-                                                            <i class="far fa-heart me-1"></i> Like
+                                                    <?php
+                                                        $stmt = $connect->prepare("SELECT * FROM likes WHERE user_id = ? AND post_id = ?");
+                                                        $stmt->execute([$_SESSION['user_id'], $post['post_id']]);
+                                                        $isLiked = $stmt->rowCount() > 0;
+                                                    ?>
+                                                        <a href="backend_add_like.php?post_id=<?= $post['post_id'] ?>&user_id=<?= $_SESSION['user_id'] ?>" class="text-body text-opacity-50 text-decoration-none d-block p-2">
+                                                            <i class="fas fa-heart me-1 <?= $isLiked ? 'text-danger' : 'text-muted' ?>"></i> <?= $isLiked ? 'Liked' : 'Like' ?>
                                                         </a>
                                                     </div>
                                                     <div class="col-6">
