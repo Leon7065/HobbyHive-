@@ -1,5 +1,5 @@
 body {
-    background-color: #fefcf3; /* Subtle off-white background */
+    background-color: #fefcf3;
     font-family: 'Poppins', sans-serif;
 }
 .post{
@@ -11,25 +11,30 @@ body {
 .container {
     background: linear-gradient(145deg, #ffffff, #f0f0f0);
 }
+
 h1 {
-    color: #f7b731; /* Yellowish-orange title */
+    color: #f7b731;
     font-weight: 600;
     text-align: center;
     margin-bottom: 1rem;
 }
+
 .form-label {
     font-weight: 500;
     color: #444;
 }
+
 .form-control, .form-select {
     border: 1px solid #ddd;
     border-radius: 10px;
     transition: all 0.3s ease;
 }
+
 .form-control:focus, .form-select:focus {
     border-color: #f7b731;
     box-shadow: 0 0 8px rgba(247, 183, 49, 0.5);
 }
+
 .badge {
     background-color: #f7b731;
     color: #fff;
@@ -41,6 +46,7 @@ h1 {
     display: inline-flex;
     align-items: center;
 }
+
 .badge i {
     margin-left: 8px;
     cursor: pointer;
@@ -48,9 +54,11 @@ h1 {
     opacity: 0.7;
     transition: opacity 0.3s ease;
 }
+
 .badge i:hover {
     opacity: 1;
 }
+
 .btn-primary {
     background-color: #f7b731;
     border-color: #f7b731;
@@ -60,6 +68,7 @@ h1 {
     font-weight: 600;
     transition: all 0.3s ease;
 }
+
 .btn-primary:hover {
     background-color: #e6a621;
     border-color: #e6a621;

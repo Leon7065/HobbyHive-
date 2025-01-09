@@ -1,75 +1,82 @@
 .profile-card {
-    width: 100%; /* Updated to fill the available space */
-    max-width: none; /* Ensures no max-width limitation */
+    width: 100%;
+    max-width: none;
     margin: 0 auto;
 }
-/* Profile Header */
+
 .profile-header {
     padding: 1.5rem;
     display: flex;
     align-items: center;
 }
+
 .profile-header img {
     width: 120px;
     height: 120px;
     border-radius: 50%;
     margin-right: 15px;
 }
+
 .profile-header .badge {
     margin-top: 10px;
 }
+
 .profile-header .btn {
     margin-left: auto;
 }
-/* Adjusted name position */
+
 .profile-header h2 {
     margin: 0;
     font-size: 1.5rem;
     font-weight: bold;
-    padding-left: 10px; /* Adjusted margin for closer alignment */
+    padding-left: 10px;
 }
-/* Profile Bio - Adjusting left alignment */
+
 .profile-body {
     padding: 1.5rem;
-    text-align: left; /* Ensure the text is left-aligned */
+    text-align: left;
 }
+
 .profile-body p {
     font-size: 1rem;
     margin-top: 10px;
     line-height: 1.5;
 }
-/* Profile Footer */
+
 .profile-footer {
     padding: 1rem;
     background-color: #f8f9fa;
 }
-/* Sidebar Styling */
-/* Include sidebar.php here */
+
 .main-content {
     flex: 1;
     padding-left: 20px;
 }
-/* Post Card Styling */
+
 .post-card {
     width: 100%;
     margin-bottom: 20px;
 }
+
 .post-card img {
     width: 100%;
     height: auto;
 }
-/* Hover Effect Styling */
+
 .card {
     position: relative;
     transition: transform 0.2s, box-shadow 0.2s;
 }
+
 .card:hover {
     transform: scale(1.03);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
+
 .card:hover .card-hover {
     opacity: 1;
 }
+
 .card-hover {
     position: absolute;
     top: 0;
@@ -83,22 +90,25 @@
     opacity: 0;
     transition: opacity 0.2s;
 }
+
 .card-hover i {
     color: #fff;
     font-size: 1.5rem;
     margin: 0 10px;
     cursor: pointer;
 }
-/* Updated Hobbies Section */
+
 .profile-hobbies {
     margin-top: 20px;
 }
+
 .hobby-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
 }
+
 .hobby-card {
     width: 100px;
     height: 100px;
@@ -115,38 +125,44 @@
     position: relative;
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
+
 .hobby-card i {
     font-size: 1rem;
     margin-bottom: 3px;
 }
+
 .hobby-card:hover {
     transform: scale(1.1);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
-/* Profile Stats Section */
+
 .profile-stats {
     display: flex;
     gap: 15px;
     margin-left: 20px;
     margin-top: 10px;
 }
+
 .profile-stats .card {
     width: 90px;
     height: 90px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
 .profile-stats .card .card-body {
     padding: 5px;
 }
+
 .profile-stats .card h5 {
     font-size: 1rem;
     margin-bottom: 5px;
 }
+
 .profile-stats .card p {
     font-size: 1.25rem;
 }
-/* Edit Profile Button Styling */
+
 .edit-profile-btn {
     margin-top: 20px;
     padding: 12px 20px;
@@ -164,6 +180,7 @@
     margin-left: auto;
     margin-right: auto;
 }
+
 .edit-profile-btn:hover {
     background-color: #0056b3;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
