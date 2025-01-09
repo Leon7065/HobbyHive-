@@ -1,7 +1,22 @@
+<?php 
+require('./backend_fetch_post_id.php');
+require('./database_config.php');
+$query_likes = "SELECT COUNT(*) AS like_count FROM likes WHERE post_id = ?";
+$stmt_likes = $connect->prepare($query_likes);
+$stmt_likes->execute([$post['post_id']]);
+$likes = $stmt_likes->fetch(PDO::FETCH_ASSOC);
+$like_count = $likes['like_count'];
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+$user_id = $_SESSION['user_id']; 
+$query_is_liked = "SELECT * FROM likes WHERE post_id = ? AND user_id = ?";
+$stmt_is_liked = $connect->prepare($query_is_liked);
+$stmt_is_liked->execute([$post['post_id'], $user_id]);
+$is_liked = $stmt_is_liked->fetch(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
-<?php require('./backend_fetch_post_id.php')?>
-<?php require('./backend_fetch_post_id.php'); ?>
-<?php require('./database_config.php')?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -86,10 +101,16 @@
                 </div>
                 <hr class="text-light">
                 <div class="d-flex align-items-center justify-content-between">
-                    <button class="btn btn-outline-light btn-sm">
-                        <i class="fa-regular fa-heart"></i> Like?
-                    </button>
-                    <p class="mb-0">37 likes</p>
+                    <form method="POST" action="./backend_add_like.php?post_id=<?= $post['post_id'] ?>" class="d-flex gap-2">
+                        <button type="submit" class="btn btn-outline-light btn-sm">
+                            <?php if ($is_liked): ?>
+                                <i class="fa-solid fa-heart"></i> Liked
+                            <?php else: ?>
+                                <i class="fa-regular fa-heart"></i> Like?
+                            <?php endif; ?>
+                        </button>
+                    </form>
+                    <p class="mb-0"><?= $like_count ?> likes</p> 
                 </div>
             </div>
             <div class="col-lg-4 col-12">
