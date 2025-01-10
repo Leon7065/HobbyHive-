@@ -99,7 +99,6 @@ $is_liked = $stmt_is_liked->fetch(PDO::FETCH_ASSOC);
                 </div>
                 <hr class="text-light">
                 <div class="d-flex align-items-center justify-content-between">
-                    <!-- Like Button -->
                     <form method="POST" action="./backend_add_like.php?post_id=<?= $post['post_id'] ?>" class="d-flex gap-2">
                         <button type="submit" class="btn btn-outline-light btn-sm">
                             <?php if ($is_liked): ?>
@@ -109,7 +108,7 @@ $is_liked = $stmt_is_liked->fetch(PDO::FETCH_ASSOC);
                             <?php endif; ?>
                         </button>
                     </form>
-                    <p class="mb-0"><?= $like_count ?> likes</p> <!-- Displaying the like count -->
+                    <p class="mb-0"><?= $like_count ?> likes</p>
                 </div>
             </div>
             <div class="col-lg-4 col-12">

@@ -119,7 +119,7 @@
                         <label for="profilePic" class="form-label">Select New Profile Picture</label>
                         <input type="file" class="form-control" id="profilePic" name="profilePic" accept="image/*" required>
                     </div>
-                    <button type="submit" name="edit" class="btn btn-primary">Upload</button>
+                    <!-- <button type="submit" name="edit" class="btn btn-primary">Upload</button> -->
                 </form>
             </div>
         </div>

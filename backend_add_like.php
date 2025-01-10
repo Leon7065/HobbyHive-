@@ -1,3 +1,4 @@
+
 <?php
 require('./database_config.php');
 

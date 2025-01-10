@@ -40,7 +40,7 @@
                 <i class="fa-regular fa-square-plus me-3"></i>
                 <span class="hide-on-collapse">New Post</span>
             </a>
-            <?php if ($user['role'] === 1): ?>
+            <?php if ($user['role'] == 1): ?>
                 <a href="./admin_panel.php" class="sidebar-link text-decoration-none p-3">
                     <i class="fas fa-cog me-3"></i>
                     <span class="hide-on-collapse">Admin Panel</span>

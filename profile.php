@@ -54,33 +54,33 @@
                                             <p class="card-text">
                                               <?php echo $profile_user['bio'] ?>
                                             </p>
-                                            <div class="profile-stats">
-                                                <div class="card">
-                                                    <div class="card-body text-center">
-                                                        <h5 class="card-title">Posts</h5>
-                                                        <p class="card-text">25</p>
-                                                    </div>
-                                                </div>
-                                                <div class="card">
-                                                    <div class="card-body text-center">
-                                                        <h5 class="card-title">Following</h5>
-                                                        <p class="card-text">142</p>
-                                                    </div>
-                                                </div>
-                                                <div class="card">
-                                                    <div class="card-body text-center">
-                                                        <h5 class="card-title">Followers</h5>
-                                                        <p class="card-text">289</p>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                          <div class="profile-stats">
+                                              <div class="card">
+                                                  <div class="card-body text-center">
+                                                      <h5 class="card-title">Posts</h5>
+                                                      <p class="card-text"><?= htmlspecialchars($posts_count) ?></p>
+                                                  </div>
+                                              </div>
+                                              <div class="card">
+                                                  <div class="card-body text-center">
+                                                      <h5 class="card-title">Following</h5>
+                                                      <p class="card-text"><?= htmlspecialchars($following_count) ?></p>
+                                                  </div>
+                                              </div>
+                                              <div class="card">
+                                                  <div class="card-body text-center">
+                                                      <h5 class="card-title">Followers</h5>
+                                                      <p class="card-text"><?= htmlspecialchars($followers_count) ?></p>
+                                                  </div>
+                                              </div>
+                                          </div>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="card-footer profile-footer">
                                     <div class="d-flex justify-content-around">
-                                        <div class="profile-hobbies">
+                                        <!-- <div class="profile-hobbies">
                                             <h5>Hobbies</h5>
                                             <div class="hobby-grid">
                                                 <div class="hobby-card">
@@ -100,7 +100,7 @@
                                                     <div>Photos</div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>

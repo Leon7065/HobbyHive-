@@ -6,7 +6,36 @@
   error_reporting(E_ALL);
 
   try {
-    $user_id = $_GET['user_id'];
+    $user_id = $_GET['user_id'] ?? $_SESSION['user_id'];
+    $query = "SELECT * FROM users WHERE user_id = ?";
+    $stmt = $connect->prepare($query);
+    $stmt->execute([$user_id]);
+    $profile_user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    $followers_query = "SELECT COUNT(*) AS followers_count FROM followers WHERE followed_id = ?";
+    $stmt = $connect->prepare($followers_query);
+    $stmt->execute([$user_id]);
+    $followers_count = $stmt->fetchColumn();
+
+    $following_query = "SELECT COUNT(*) AS following_count FROM followers WHERE follower_id = ?";
+    $stmt = $connect->prepare($following_query);
+    $stmt->execute([$user_id]);
+    $following_count = $stmt->fetchColumn();
+
+    $posts_query = "SELECT COUNT(*) AS posts_count FROM posts WHERE user_id = ?";
+    $stmt = $connect->prepare($posts_query);
+    $stmt->execute([$user_id]);
+    $posts_count = $stmt->fetchColumn();
+
+    $posts_query = "SELECT * FROM posts WHERE user_id = ? ORDER BY created_at DESC";
+    $stmt = $connect->prepare($posts_query);
+    $stmt->execute([$user_id]);
+    $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    $followed_query = "SELECT followed_id FROM followers WHERE follower_id = ?";
+    $stmt = $connect->prepare($followed_query);
+    $stmt->execute([$_SESSION['user_id']]);
+    $followed_ids = $stmt->fetchAll(PDO::FETCH_COLUMN);
 
     $sql = "SELECT posts.*, users.fullname AS username, users.profile_pic AS profile_pic
             FROM posts

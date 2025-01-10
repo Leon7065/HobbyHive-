@@ -57,11 +57,11 @@
     $sqlQuery->bindParam(':role', $role);
 
     if ($sqlQuery->execute()) {
-        header("Location: ../login.php");
+        header("Location: ./login.php");
         exit();
     } else {
         echo "Registration failed!";
-        header("Location: ../signup.php");
+        header("Location: ./signup.php");
         exit();
     }
   }

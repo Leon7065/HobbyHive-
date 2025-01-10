@@ -48,7 +48,7 @@
             const hobby = selectedOption.value;
 
             if (!Array.from(selectedHobbies.children).some(badge => badge.textContent.trim() === hobby)) {
- 
+                // Create a badge
                 const badge = document.createElement('span');
                 badge.className = 'badge me-2 mb-2';
                 badge.textContent = hobby;
